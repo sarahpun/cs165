@@ -35,6 +35,13 @@ for line in inputShadow:
 #     print(x)
 
 #---------------------------------
+# teamOrBonus = input("Crack team or bonus")
+# if teamOrBonus == "team":
+#     desiredCrack = input("Enter team user you want to Crack: ")
+#     mashLocated = locateTeamCrack(desiredCrack, passBank)
+# elif teamOrBonus == "bonus":
+#     mashLocated = locateTeamCrack("bonus", passBank)
+    
 desiredCrack = input("Enter team user you want to Crack: ")
 mashLocated = locateTeamCrack(desiredCrack, passBank)
 
@@ -71,27 +78,27 @@ def crackTheCode(passLetter):
         passes = passLetter + ''.join(c)
         passChecks += 1
         if crypt.crypt(passes, saltValue) == passValue:
-            print('\nPASSWORD CRACKED! ~ SUCCESS! :', passes)
+            print('\n1. PASSWORD CRACKED! ~ SUCCESS! :', passes)
             
             num_processes = cpu_count()
-            print(f"\nNumber of Processes/Threads: {num_processes}")
+            print(f"\n2. Number of Processes/Threads: {num_processes}")
 
             cpu_model = platform.processor()
-            print(f"CPU Model: {cpu_model}")
+            print(f"\n3. CPU Model: {cpu_model}")
 
             # print("\nSource Code:")
             # with open(__file__, 'r') as f:
             #     print(f.read())
             
-            print(f"Number of Checks: {passChecks}")
+            # print(f"\nNumber of Checks: {passChecks}")
             
             end = time.time()
             seconds = end - start
             throughput = passChecks / float(seconds)
             
-            print(f"Throughput: {throughput}")
+            print(f"\n4. Throughput: {throughput} per second")
             
-            print(f"\nTime to Crack: {seconds} seconds\n")
+            # print(f"\nTime to Crack: {seconds} seconds\n")
             
             
             
